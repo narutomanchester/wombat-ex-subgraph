@@ -1,0 +1,8 @@
+{
+  "arbitrum-one": {
+    "main_pool": {
+      "address": "0xc6bc781E20f9323012F6e422bdf552Ff06bA6CD1",
+      "startBlock": 108001037
+    }
+  }
+}

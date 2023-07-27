@@ -1,0 +1,6 @@
+*/generated/*
+*/build/*
+*/tests/*
+*lock*
+tsconfig.json
+*.ipynb_checkpoints

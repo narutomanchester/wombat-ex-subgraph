@@ -1,0 +1,49 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: main_pool
+    network: arbitrum-one
+    source:
+      address: "0xc6bc781E20f9323012F6e422bdf552Ff06bA6CD1"
+      abi: main_pool
+      startBlock: 108001037
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - BlockData
+      abis:
+        - name: main_pool
+          file: ./abis/main_pool.json
+        - name: ERC20
+          file: ./abis/erc20.json
+      eventHandlers:
+        - event: Swap(indexed address,address,address,uint256,uint256,indexed address)
+          handler: handleSwap
+      file: ./src/mapping/main-pool.ts
+
+  - kind: ethereum
+    name: overnigh_pool
+    network: arbitrum-one
+    source:
+      address: "0xCF20fDA54e37f3fB456930f02fb07FccF49e4849"
+      abi: main_pool
+      startBlock: 108001037
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - BlockData
+      abis:
+        - name: main_pool
+          file: ./abis/main_pool.json
+        - name: ERC20
+          file: ./abis/erc20.json
+      eventHandlers:
+        - event: Swap(indexed address,address,address,uint256,uint256,indexed address)
+          handler: handleSwap
+      file: ./src/mapping/main-pool.ts

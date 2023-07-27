@@ -1,0 +1,18 @@
+# Store data block by block
+type BlockData @entity {
+  id: ID!
+  blockNumber: Int!
+  volumeUSD: BigDecimal!
+  feesUSD: BigDecimal!
+  txCount: BigInt!
+}
+
+# Store data second by second
+type SecondData @entity {
+  id: ID!
+  unixTime: Int!
+  unixHour: Int!
+  volumeUSD: BigDecimal!
+  feesUSD: BigDecimal!
+  txCount: BigInt!
+}
